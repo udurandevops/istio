@@ -1,0 +1,14 @@
+kind: Gateway
+metadata:
+  name: nginx-gateway
+  namespace: default
+spec:
+  selector:
+    istio: ingressgateway  # Istio ingress gateway'ini seçiyoruz
+  servers:
+    - port:
+        number: 80
+        name: http
+        protocol: HTTP
+      hosts:
+        - "*"
